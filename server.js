@@ -35,6 +35,13 @@ function vercelRes(res) {
 http.createServer((req, res) => {
   const url = decodeURIComponent(req.url.split('?')[0]);
 
+  if (url === '/api/transcribe') {
+    loadEnv();
+    delete require.cache[require.resolve('./api/transcribe.js')];
+    require('./api/transcribe.js')(req, vercelRes(res));
+    return;
+  }
+
   if (url === '/api/chat') {
     loadEnv();
     let raw = '';

@@ -9,7 +9,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Riya Joshi — Software Engineer">
   <meta property="og:description" content="Full-stack developer and AI engineer building offline clinical AI (Backpack AI), RAG, voice AI and FastAPI backends.">
-  <meta property="og:image" content="images/backpack-diagnosis.png">
+  <meta property="og:image" content="https://riya-joshi.vercel.app/images/photo.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234f46e5'/%3E%3Cstop offset='1' stop-color='%23db2777'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' fill='%23fff' text-anchor='middle'%3ERJ%3C/text%3E%3C/svg%3E">
 
@@ -352,6 +352,18 @@
     }
 
     .btn-primary:hover { border-color: var(--text); box-shadow: var(--shadow-hover); }
+
+    .btn-resume {
+      padding: 0.8rem 1.45rem;
+      font-size: 0.97rem;
+      color: #fff;
+      border: none;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 10px 24px -10px rgba(124, 58, 237, 0.65);
+    }
+    .btn-resume:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -10px rgba(124, 58, 237, 0.8); }
+    .btn-resume-arrow { transition: transform 0.2s ease; }
+    .btn-resume:hover .btn-resume-arrow { transform: translate(2px, -2px); }
 
     /* ---------- HERO ---------- */
     .hero {
@@ -701,32 +713,13 @@
     }
 
     .pipe-step b { font-size: 0.98rem; display: block; line-height: 1.3; }
-    .pipe-step small { font-size: 0.84rem; color: var(--muted); }
+    .pipe-step small { font-size: 0.84rem; color: var(--muted); display: block; line-height: 1.45; margin-top: 0.15rem; }
 
     .pipe-arrow { align-self: center; color: var(--faint); line-height: 0; }
 
-    .shots {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      padding: 2rem 2.75rem 2.75rem;
-      border-top: 1px solid var(--border);
-    }
 
-    .shots figure { margin: 0; }
 
-    .shots img {
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
-      object-position: top center;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      display: block;
-    }
 
-    .shots figcaption { font-size: 0.88rem; color: var(--muted); margin-top: 0.55rem; line-height: 1.45; }
 
     /* ---------- PROJECTS ---------- */
     .projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
@@ -860,8 +853,8 @@
     }
 
     .cert-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
-    .cert-thumb.badge { background: var(--surface-2); }
-    .cert-thumb.badge img { position: absolute; inset: 12% 0; width: 100%; height: 76%; object-fit: contain; }
+    .cert-thumb.skill-badge { background: var(--surface-2); }
+    .cert-thumb.skill-badge img { position: absolute; inset: 12% 0; width: 100%; height: 76%; object-fit: contain; }
 
     .cert-meta { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
 
@@ -985,7 +978,6 @@
 
     @media (max-width: 880px) {
       .projects, .certs, .skills { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
-      .shots { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 768px) {
@@ -1042,7 +1034,6 @@
 
       .projects, .writing, .ach, .certs, .skills, .feature-list { grid-template-columns: 1fr; }
       .featured-body, .pipeline { padding: 1.5rem 1.25rem; }
-      .shots { grid-template-columns: 1fr; padding: 1.25rem; gap: 1rem; }
       .timeline { padding: 1.35rem 1rem; }
       .company { gap: 0.75rem; margin-bottom: 1.25rem; }
       .company h3 { font-size: 1.2rem; }
@@ -1620,17 +1611,21 @@
         </p>
 
         <div class="hero-actions">
-          <a href="https://drive.google.com/file/d/1d3d6N7KyIWcJC-29GazrGDEtHs63-a78/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-primary">
-            <svg width="16" height="16"><use href="#i-file"/></svg> Resume
-          </a>
-          <a href="#projects" class="btn">
-            See my work <svg width="16" height="16"><use href="#i-down"/></svg>
+          <a href="https://drive.google.com/file/d/1d3d6N7KyIWcJC-29GazrGDEtHs63-a78/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-resume">
+            <svg width="17" height="17"><use href="#i-file"/></svg> View Resume
+            <svg class="btn-resume-arrow" width="14" height="14"><use href="#i-arrow"/></svg>
           </a>
           <a href="https://github.com/RiyaJoshi0103" target="_blank" rel="noopener" class="icon-btn" style="width:46px;height:46px" aria-label="GitHub">
             <svg width="18" height="18"><use href="#i-github"/></svg>
           </a>
           <a href="https://www.linkedin.com/in/riya-joshi-138148260" target="_blank" rel="noopener" class="icon-btn" style="width:46px;height:46px" aria-label="LinkedIn">
             <svg width="18" height="18"><use href="#i-linkedin"/></svg>
+          </a>
+          <a href="mailto:riyajoshi1325@gmail.com" data-email class="icon-btn" style="width:46px;height:46px" aria-label="Email" title="riyajoshi1325@gmail.com">
+            <svg width="18" height="18"><use href="#i-mail"/></svg>
+          </a>
+          <a href="https://medium.com/@riyajoshi1325" target="_blank" rel="noopener" class="icon-btn" style="width:46px;height:46px" aria-label="Medium" title="Medium articles">
+            <svg width="18" height="18"><use href="#i-medium"/></svg>
           </a>
         </div>
       </div>
@@ -1808,20 +1803,6 @@
             <div class="pipe-step"><span class="pipe-num">5</span><div><b>Conflict check &amp; EMR report</b><small>DDInter drug-interaction alerts</small></div></div>
           </div>
 
-          <div class="shots">
-            <figure>
-              <img src="images/backpack-voice.png" alt="Backpack AI voice intake: health worker and patient turns transcribed" loading="lazy">
-              <figcaption>Voice intake — each speaker's turn is recorded and transcribed</figcaption>
-            </figure>
-            <figure>
-              <img src="images/backpack-diagnosis.png" alt="Backpack AI diagnosis step with suggested lab tests" loading="lazy">
-              <figcaption>Diagnosis — suggested diagnoses, exam notes and lab tests</figcaption>
-            </figure>
-            <figure>
-              <img src="images/backpack-conflict.png" alt="Backpack AI medicine conflict alert for ibuprofen and paracetamol" loading="lazy">
-              <figcaption>Medicine conflict alert — drug interaction with severity and next step</figcaption>
-            </figure>
-          </div>
         </div>
       </div>
     </section>
@@ -2025,7 +2006,7 @@
             </div>
           </article>
           <article class="card cert reveal">
-            <a class="cert-thumb badge" href="images/certs/google-model-eval.png" target="_blank" rel="noopener" aria-label="Open MLOps with Agent Platform: Model Evaluation certificate image">
+            <a class="cert-thumb skill-badge" href="images/certs/google-model-eval.png" target="_blank" rel="noopener" aria-label="Open MLOps with Agent Platform: Model Evaluation certificate image">
               <img src="images/certs/google-model-eval.png" alt="MLOps with Agent Platform: Model Evaluation certificate" loading="lazy">
             </a>
             <div class="cert-body">
@@ -2035,7 +2016,7 @@
             </div>
           </article>
           <article class="card cert reveal">
-            <a class="cert-thumb badge" href="images/certs/google-mlops-genai.png" target="_blank" rel="noopener" aria-label="Open MLOps for Generative AI certificate image">
+            <a class="cert-thumb skill-badge" href="images/certs/google-mlops-genai.png" target="_blank" rel="noopener" aria-label="Open MLOps for Generative AI certificate image">
               <img src="images/certs/google-mlops-genai.png" alt="MLOps for Generative AI certificate" loading="lazy">
             </a>
             <div class="cert-body">
@@ -2182,7 +2163,7 @@
             <p>Open to full-stack and AI engineering conversations.</p>
           </div>
           <div class="contact-actions">
-            <a class="btn btn-primary" href="mailto:riyajoshi1325@gmail.com"><svg width="16" height="16"><use href="#i-mail"/></svg> Email me</a>
+            <a class="btn btn-primary" href="mailto:riyajoshi1325@gmail.com" data-email title="riyajoshi1325@gmail.com"><svg width="16" height="16"><use href="#i-mail"/></svg> Email me</a>
             <a class="btn" href="https://wa.me/916395060308" target="_blank" rel="noopener" style="background:linear-gradient(135deg, #25d366, #128c7e); color:#fff; border-color:transparent; box-shadow: 0 4px 14px rgba(37,211,102,0.3);"><svg width="17" height="17"><use href="#i-whatsapp"/></svg> WhatsApp</a>
             <a class="btn" href="tel:+916395060308"><svg width="16" height="16"><use href="#i-phone"/></svg> +91 63950 60308</a>
             <div style="display:flex; gap:0.5rem; align-items:center;">
@@ -2397,6 +2378,19 @@
 
     paginate('projectGrid', 'pager', 'projects', 3);
     paginate('certGrid', 'certPager', 'credentials', 3);
+
+    // Email buttons: on computers open Gmail compose with Riya's address in "To";
+    // on phones keep mailto: so the Gmail / Mail app opens instead.
+    (function () {
+      const isPhone = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.matchMedia('(pointer: coarse)').matches;
+      if (isPhone) return;
+      const gmail = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent('riyajoshi1325@gmail.com');
+      document.querySelectorAll('a[data-email]').forEach((a) => {
+        a.href = gmail;
+        a.target = '_blank';
+        a.rel = 'noopener';
+      });
+    })();
 
     // Reveal sections on scroll
     const items = document.querySelectorAll('.reveal');
@@ -2760,24 +2754,99 @@
       }
 
       // ---------- Voice input (speech-to-text) ----------
+      // Uses the browser's built-in speech recognition when it works (Chrome, Edge, Safari).
+      // Otherwise (Firefox, Brave, blocked speech service) it records a short clip and
+      // sends it to /api/transcribe, which uses Groq Whisper.
       const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      const canRecord = !aiUnavailable && !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+      let useNative = !!SpeechRecognition && window.isSecureContext;
       let recognition = null;
+      let recorder = null;
+      let recordTimer = null;
       let listening = false;
+      const DEFAULT_PLACEHOLDER = chatInput.placeholder;
+      const MAX_RECORD_MS = 15000;
 
-      function setListening(on) {
+      function setListening(on, label) {
         listening = on;
         chatMicBtn.classList.toggle('listening', on);
         chatMicBtn.setAttribute('aria-pressed', String(on));
         chatMicBtn.setAttribute('aria-label', on ? 'Stop listening' : 'Ask with your voice');
         chatMicBtn.title = on ? 'Stop listening' : 'Ask with your voice';
-        chatInput.placeholder = on ? 'Listening… speak now' : "Ask about Riya's resume, projects, skills...";
+        chatInput.placeholder = on ? (label || 'Listening… speak now') : DEFAULT_PLACEHOLDER;
       }
 
       function stopListening() {
-        if (recognition && listening) recognition.abort();
+        if (recognition && listening && useNative) recognition.abort();
+        if (recorder && recorder.state === 'recording') { recorder.onstop = cleanupRecorder; recorder.stop(); }
       }
 
-      if (SpeechRecognition && window.isSecureContext) {
+      function micBlockedMessage() {
+        addBotMessage('🎙️ I can\'t access your microphone. Click the lock icon next to the address bar, allow the microphone, and try again — or just type your question.');
+      }
+
+      function noMicMessage() {
+        addBotMessage('🎙️ No microphone was found on this device. You can type your question instead.');
+      }
+
+      function sendVoiceText(text) {
+        text = (text || '').trim();
+        if (!text) { chatInput.placeholder = "Didn't catch that — tap the mic and try again"; return; }
+        if (busy) { chatInput.value = text; return; }
+        chatInput.value = '';
+        handleUserQuery(text, true);
+      }
+
+      // --- Fallback: record audio and transcribe on the server ---
+      function cleanupRecorder() {
+        clearTimeout(recordTimer);
+        if (recorder && recorder.stream) recorder.stream.getTracks().forEach((t) => t.stop());
+        recorder = null;
+        setListening(false);
+      }
+
+      async function startRecording() {
+        let stream;
+        try {
+          stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        } catch (err) {
+          if (err && (err.name === 'NotFoundError' || err.name === 'OverconstrainedError')) noMicMessage();
+          else micBlockedMessage();
+          return;
+        }
+        const type = ['audio/webm;codecs=opus', 'audio/webm', 'audio/mp4', 'audio/ogg']
+          .find((t) => MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported(t)) || '';
+        const chunks = [];
+        recorder = type ? new MediaRecorder(stream, { mimeType: type }) : new MediaRecorder(stream);
+        recorder.stream = stream;
+        recorder.ondataavailable = (e) => { if (e.data && e.data.size) chunks.push(e.data); };
+        recorder.onstop = async () => {
+          const mime = (recorder && recorder.mimeType) || type || 'audio/webm';
+          cleanupRecorder();
+          const blob = new Blob(chunks, { type: mime });
+          if (blob.size < 1500) { chatInput.placeholder = "Didn't catch that — tap the mic and try again"; return; }
+          chatInput.placeholder = 'Transcribing…';
+          chatMicBtn.disabled = true;
+          try {
+            const res = await fetch('/api/transcribe', { method: 'POST', headers: { 'Content-Type': mime.split(';')[0] }, body: blob });
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            const data = await res.json();
+            chatInput.placeholder = DEFAULT_PLACEHOLDER;
+            sendVoiceText(data.text);
+          } catch (err) {
+            chatInput.placeholder = DEFAULT_PLACEHOLDER;
+            addBotMessage('🎙️ Sorry, I couldn\'t turn that recording into text right now. Please type your question instead.');
+          } finally {
+            chatMicBtn.disabled = false;
+          }
+        };
+        recorder.start();
+        setListening(true, 'Recording… tap the mic again to send');
+        recordTimer = setTimeout(() => { if (recorder && recorder.state === 'recording') recorder.stop(); }, MAX_RECORD_MS);
+      }
+
+      // --- Built-in browser speech recognition ---
+      if (useNative) {
         recognition = new SpeechRecognition();
         recognition.lang = 'en-IN';
         recognition.interimResults = true;
@@ -2785,6 +2854,7 @@
         recognition.maxAlternatives = 1;
 
         let finalText = '';
+        let switchToRecording = false;
 
         recognition.onstart = () => { finalText = ''; setListening(true); };
 
@@ -2798,12 +2868,18 @@
         };
 
         recognition.onerror = (e) => {
-          if (e.error === 'not-allowed' || e.error === 'service-not-allowed') {
-            addBotMessage('🎙️ I can\'t access your microphone. Please allow mic access in your browser settings, or type your question instead.');
+          if (e.error === 'not-allowed') {
+            micBlockedMessage();
+          } else if (e.error === 'audio-capture') {
+            noMicMessage();
           } else if (e.error === 'no-speech') {
             chatInput.placeholder = "Didn't catch that — tap the mic and try again";
           } else if (e.error !== 'aborted') {
+            // 'network', 'service-not-allowed', 'language-not-supported': the browser's
+            // speech service isn't usable here, so switch to recording + server transcription.
             console.warn('Speech recognition error:', e.error);
+            if (canRecord) { useNative = false; switchToRecording = true; }
+            else addBotMessage('🎙️ Voice input isn\'t available in this browser. Please type your question instead.');
           }
         };
 
@@ -2811,19 +2887,28 @@
           setListening(false);
           const text = finalText.trim();
           finalText = '';
-          if (text && !busy) {
-            chatInput.value = '';
-            handleUserQuery(text, true);
-          }
+          chatInput.value = '';
+          if (switchToRecording) { switchToRecording = false; startRecording(); return; }
+          if (text) sendVoiceText(text);
         };
+      }
 
+      if (useNative || canRecord) {
         chatMicBtn.hidden = false;
         chatVoiceHint.hidden = false;
         chatMicBtn.addEventListener('click', () => {
-          if (listening) { recognition.stop(); return; }
+          if (listening) {
+            if (useNative && recognition) recognition.stop();
+            else if (recorder && recorder.state === 'recording') recorder.stop();
+            return;
+          }
           if (busy) return;
           stopSpeaking();
-          try { recognition.start(); } catch (err) { /* already started */ }
+          if (useNative) {
+            try { recognition.start(); } catch (err) { /* already started */ }
+          } else {
+            startRecording();
+          }
         });
       }
 
