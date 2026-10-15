@@ -2,3 +2,6 @@
 .env.*
 .vercel
 node_modules
+
+# old version of the page, kept only locally
+index.old.html
